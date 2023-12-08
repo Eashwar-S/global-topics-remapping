@@ -1,0 +1,27 @@
+<launch>
+<group ns="robot1">
+
+    <!-- Start turtle_sim -->
+    <node name="turtle_sim_node" pkg="turtlesim" type="turtlesim_node" output="screen" /> 
+
+    <!-- Wait for turtle_sim to start -->
+
+    <!-- Start rotate_turtle_node -->
+    <node name="rotate_turtle_node" pkg="beginner_tutorials" type="turtle_pub.py" output="screen" />
+
+    <!-- Launch the talker node -->
+    <node name="talker" pkg="beginner_tutorials" type="talker.py" output="screen" />
+  
+    <!-- Launch the subscriber node -->
+    <node name="listener" pkg="beginner_tutorials" type="listener.py" output="screen" />
+
+    <node name="cmd_vel_publisher_node" pkg="beginner_tutorials" type="cmd_vel_publisher.py" output="screen" />
+
+    <!-- Start the cmd_vel_subscriber node -->
+    <node name="cmd_vel_subscriber_node" pkg="beginner_tutorials" type="cmd_vel_subscriber.py" output="screen" />
+
+</group>
+  <!-- <node name="remap_topics" pkg="global_topics_remapper" type="remap_topics_executable.py" output="screen">
+    <rosparam command="load" file="$(find global_topics_remapper)/config/remapping_params.yaml" />
+  </node> -->
+</launch>

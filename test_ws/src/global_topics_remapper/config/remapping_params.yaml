@@ -1,0 +1,5 @@
+custom_robot:
+  topic_prefix: /robot1
+
+topics:
+  - turtle1/cmd_vel
